@@ -17,13 +17,13 @@ $ cp -r claude-devcontainer-slim/.devcontainer ${YOUR_WORKSPACE}
 
 ### "I want to use XXX image"
 
-Edit the `FROM` instruction in `Dockerfile`. For example, you can run on the `python` image like the following:
+You can use any Debian/Ubuntu based image by just editing `FROM` instruction in `Dockerfile` like the following:
 
 ```Dockerfile
 FROM python:3.14-slim
 ```
 
-### "How to lint my Python app?"
+### "How to lint my Python codes?"
 
 Add settings to `extensions` and `vscode` in `devcontainer.json`. It is the same with `extensions.json` and `settings.json`.
 
@@ -34,6 +34,7 @@ Add settings to `extensions` and `vscode` in `devcontainer.json`. It is the same
       ...
     ],
     "vscode": {
+      "python.defaultInterpreterPath": "/usr/local/bin/python3",
       "[python]": {
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
@@ -45,6 +46,23 @@ Add settings to `extensions` and `vscode` in `devcontainer.json`. It is the same
       ...
     }
   }
+```
+
+### "How to setup app dependencies when building container?"
+
+Configure `postCreateCommand` in `devcontainer.json`:
+
+```json
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+```
+
+then place the setup script:
+
+```bash
+#!/bin/bash
+set -euo pipefail
+
+pip3 install -r /workspace/requirements.txt
 ```
 
 ### "VS Code does not recognize `.git` on the parent directory"
