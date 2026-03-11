@@ -1,0 +1,1 @@
+The files under `.devcontainer` are based on https://github.com/anthropics/claude-code from Anthropic PBC, licensed under their [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms).
