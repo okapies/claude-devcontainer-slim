@@ -7,6 +7,9 @@
     }
   },
   "runArgs": ["--cap-add=NET_ADMIN", "--cap-add=NET_RAW"],
+  "features": {
+    "./setup-claude-code": {}
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -39,6 +42,5 @@
   },
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=delegated",
   "workspaceFolder": "/workspace",
-  "postStartCommand": "sudo /usr/local/bin/init-firewall.sh",
   "waitFor": "postStartCommand"
 }

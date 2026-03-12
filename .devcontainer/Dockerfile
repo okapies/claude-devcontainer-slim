@@ -57,14 +57,3 @@ ENV SHELL=/bin/bash
 # Set the default editor and visual
 ENV EDITOR=nano
 ENV VISUAL=nano
-
-# Install Claude Code using native installer
-RUN curl -fsSL https://claude.ai/install.sh | bash
-
-# Copy and set up firewall script
-COPY init-firewall.sh /usr/local/bin/
-USER root
-RUN chmod +x /usr/local/bin/init-firewall.sh && \
-  echo "vscode ALL=(root) NOPASSWD: /usr/local/bin/init-firewall.sh" > /etc/sudoers.d/vscode-firewall && \
-  chmod 0440 /etc/sudoers.d/vscode-firewall
-USER vscode

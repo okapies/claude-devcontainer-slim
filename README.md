@@ -50,7 +50,7 @@ Add settings to `extensions` and `vscode` in `devcontainer.json`. It is the same
 
 ### "How to setup app dependencies when building container?"
 
-Configure `postCreateCommand` in `devcontainer.json`:
+Configure `postCreateCommand` [lifecycle script](https://containers.dev/implementors/json_reference/#lifecycle-scripts) in `devcontainer.json`:
 
 ```json
   "postCreateCommand": "bash .devcontainer/setup.sh",
@@ -74,6 +74,18 @@ Mount the parent as a workspace and configure the subdirectory as `workspaceFold
   "workspaceFolder": "/workspace/myapp",
 ```
 
+## Changelog
+
+### 2026/03/12
+
+- Make Claude Code setup as a local feature
+- Migrate bookworm into trixie
+- Update LICENSE and NOTICE
+
+### 2026/03/11
+
+- Initial commit
+
 ## License
 
-See [LICENSE.md](/LICENSE.md).
+See [LICENSE](/LICENSE) and [NOTICE](/NOTICE).

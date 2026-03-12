@@ -1,0 +1,6 @@
+{
+  "id": "setup-claude-code",
+  "version": "1.0.0",
+  "name": "Setup Claude Code",
+  "postStartCommand": "sudo /usr/local/bin/init-firewall.sh"
+}

@@ -1,0 +1,11 @@
+NOTICES:
+
+This document includes a list of components used in this example, including those that have been modified.
+
+## claude-code/.devcontainer
+
+The following files are based on the [reference implementation](https://code.claude.com/docs/en/devcontainer) by Anthropic PBC, licensed under their [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms).
+
+- .devcontainer/devcontainer.json
+- .devcontainer/Dockerfile
+- .devcontainer/setup-claude-code/init-firewall.sh
