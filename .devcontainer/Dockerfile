@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim
+FROM debian:trixie-slim
 
 RUN groupadd --gid 1000 vscode \
   && useradd --uid 1000 --gid vscode --shell /bin/bash --create-home vscode
